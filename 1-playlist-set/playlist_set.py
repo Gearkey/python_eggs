@@ -14,18 +14,36 @@ def main():
     if go == '1': one_path(file_format)
     else: pass
 
+# 业务模块 --------------------------
+
 def one_path(file_format):
     path = input('请输入操作路径：')
     # path = 'D:\\temp\\t'
     if file_format == 'm3u': print_m3u(path)
     else: pass
 
-# 模块分割 --------------------------
+# 功能模块 --------------------------
 
 def print_m3u(path):
+    path_out = path + 'playlist.m3u'
+    
+    m3u = open(path_out, "w")
+    m3u.write('#EXTM3U\n')
+
     with os.scandir(path) as files:
         for file in files:
-            print(file.name)
+            m3u.write('#EXTINF:-1,\n')
+            m3u.write(file.name + '\n')
+    
+    m3u.close
+
+# 辅助模块 --------------------------
+
+## 格式化路径
+def path_fix(path):
+    ### if path[]
+    
+    return path
 
 if __name__ == "__main__":
     main()
