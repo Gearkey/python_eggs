@@ -2,7 +2,7 @@ import os
 
 def main():
     # 开始
-    print('-- playlist_set v0.2 --\n')
+    print('\n-- playlist_set v0.2 --\n')
 
     # 指定生成的文件格式，默认 m3u
     file_format = 'm3u'

@@ -2,6 +2,8 @@
 
 简单的列表生成。
 
+![](https://disk.vvnote.org/github/gi-tools/1-playlist-set/1.png)
+
 ## 更新日志
 
 ```
