@@ -28,5 +28,5 @@ def main():
 def get_temperature(lower, upper):
     return round(random.uniform(lower, upper),1)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

@@ -49,5 +49,5 @@ def path_fix(path):
     
     return path
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
