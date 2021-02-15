@@ -3,7 +3,7 @@ from PIL import Image
 
 def main():
     # 开始
-    print('\n-- Pic_cut v0.2 --\n')
+    print('\n-- Pic_cut v0.2b --\n')
 
     # 默认数值
     path = 'D:\\temp\\piccut\\pic\\'
@@ -40,8 +40,11 @@ def pic_cut(path, path_out, row_num, column_num):
     num = 1
     for i in range(row_num):
         for j in range(column_num):
+            x = w * j
+            y = h * i
+            
             # 左上右下
-            box = (w * j, h * i, w * (j+1), h * (i+1))
+            box = (x, y, x + w, y + h)
             pic.crop(box).save(p[0] + '\\' + pic_name[0] + '_' + str(num) + '.' + pic_name[-1])
             num += 1
     
