@@ -18,15 +18,18 @@ def main():
 # 业务模块 --------------------------
 
 def one_path(file_format):
-    path = path_fix(input('请输入操作路径：'))
+    path = path_fix(input('操作路径：'))
     # path = 'D:\\temp\\t\\'
-    if file_format == 'm3u': print("\n文件已生成至：" + print_m3u(path))
+    path_out = path_fix(input('输出路径：'))
+    path_prefix = path_fix(input('前缀路径：'))
+
+    if file_format == 'm3u': print("\n文件已生成至：" + print_m3u(path, path_out, path_prefix))
     else: pass
 
 # 功能模块 --------------------------
 
-def print_m3u(path):
-    path_out = path + 'playlist.m3u'
+def print_m3u(path, path_out, path_prefix):
+    path_out = path_out + 'playlist.m3u'
     
     m3u = open(path_out, "w")
     m3u.write('#EXTM3U\n')
@@ -34,7 +37,7 @@ def print_m3u(path):
     with os.scandir(path) as files:
         for file in files:
             m3u.write('#EXTINF:-1,\n')
-            m3u.write(file.name + '\n')
+            m3u.write(path_prefix + file.name + '\n')
     
     m3u.close
     return path_out
