@@ -2,7 +2,7 @@ import os
 
 def main():
     # 开始
-    print('\n-- playlist_set v0.2 --\n')
+    print('\n-- playlist_set v0.3b --\n')
 
     # 指定生成的文件格式，默认 m3u
     file_format = 'm3u'
@@ -18,10 +18,9 @@ def main():
 # 业务模块 --------------------------
 
 def one_path(file_format):
-    path = path_fix(input('操作路径：'))
-    # path = 'D:\\temp\\t\\'
-    path_out = path_fix(input('输出路径：'))
-    path_prefix = path_fix(input('前缀路径：'))
+    path = input('操作路径：')
+    path_out = input('输出路径：')
+    path_prefix = input('前缀路径：')
 
     if file_format == 'm3u': print("\n文件已生成至：" + print_m3u(path, path_out, path_prefix))
     else: pass
@@ -29,7 +28,7 @@ def one_path(file_format):
 # 功能模块 --------------------------
 
 def print_m3u(path, path_out, path_prefix):
-    path_out = path_out + 'playlist.m3u'
+    path_out = os.path.join(path_out, 'playlist.m3u')
     
     m3u = open(path_out, "w")
     m3u.write('#EXTM3U\n')
@@ -37,20 +36,10 @@ def print_m3u(path, path_out, path_prefix):
     with os.scandir(path) as files:
         for file in files:
             m3u.write('#EXTINF:-1,\n')
-            m3u.write(path_prefix + file.name + '\n')
+            m3u.write(os.path.join(path_prefix, file.name) + '\n')
     
     m3u.close
     return path_out
-
-# 辅助模块 --------------------------
-
-## 格式化路径
-def path_fix(path):
-    if path[len(path)-1:] == '/': pass
-    elif path[len(path)-1:] == '\\': pass
-    else: path = path + '/'
-    
-    return path
 
 if __name__ == '__main__':
     main()
