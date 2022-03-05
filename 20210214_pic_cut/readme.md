@@ -2,7 +2,7 @@
 
 根据输入的行列数裁剪图片。
 
-![](https://disk.vvnote.org/github/gi-tools/3-pic-cut/1.png)
+![3.png](https://s2.loli.net/2022/03/05/ZL25TJMiOPKpcNj.png)
 
 ## 更新日志
 

@@ -2,7 +2,7 @@
 
 简单的列表生成。
 
-![](https://disk.vvnote.org/github/gi-tools/1-playlist-set/1.png)
+![1.png](https://s2.loli.net/2022/03/05/V86hF1aP2W7bcig.png)
 
 ## 更新日志
 

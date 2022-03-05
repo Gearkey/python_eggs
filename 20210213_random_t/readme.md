@@ -2,7 +2,7 @@
 
 在某个温度范围内进行随机生成。
 
-![](https://disk.vvnote.org/github/gi-tools/2-random-t/1.png)
+![2.png](https://s2.loli.net/2022/03/05/I3FxqgZQLlzco2h.png)
 
 ## 更新日志
 
