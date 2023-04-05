@@ -10,6 +10,7 @@ def main():
 
     text = text.replace("\n", "\r\n")
     text = text.replace("\r\n\r\n", "\r\n---\r\n")
+    text = text.replace("\\", "")
 
     output.write(text)
     print(text)
