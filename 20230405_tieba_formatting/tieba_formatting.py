@@ -5,11 +5,11 @@ def main():
     output = open("./_note/output.md", mode="w", encoding='utf8')
 
     text = input.read()
-    text = text.replace("\n", "\n\r")
-    text = text.replace("\n\r\n\r", "\n\r---\n\r")
-    
     text = re.sub(r"\[(.*)\]\((.*)\)", r"\1（\2）", text)
     text = re.sub(r"## (.*)", r"【\1】", text)
+
+    text = text.replace("\n", "\r\n")
+    text = text.replace("\r\n\r\n", "\r\n---\r\n")
 
     output.write(text)
     print(text)
